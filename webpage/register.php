@@ -20,15 +20,15 @@ include('connection.php');
 				<ul class="form">
 					<li>
 						<label for="username">Username</label>
-						<input type="text" name="username" id="username" required/>
+						<input type="text" name="username" id="username" <?php if(isset($_SESSION["user"])){?> value = "<?= $_SESSION["user"]["username"] ?>" <?php } else { ?> value = "<?= $username ?>" <?php } ?>required/>
 					</li>
 					<li>
 						<label for="fullname">Full Name</label>
-						<input type="text" name="fullname" id="fullname" required/>
+						<input type="text" name="fullname" id="fullname" <?php if(isset($_SESSION["user"])){?> value = "<?= $_SESSION["user"]["fullname"] ?>" <?php } else { ?> value = "<?= $fullname ?>" <?php } ?> required/>
 					</li>
 					<li>
 						<label for="email">Email</label>
-						<input type="email" name="email" id="email" />
+						<input type="email" name="email" id="email"<?php if(isset($_SESSION["user"])){?> value = "<?= $_SESSION["user"]["email"] ?>" <?php } else { ?> value = "<?= $email ?>" <?php } ?> />
 					</li>
 					<li>
 						<label for="pwd">Password</label>
@@ -39,7 +39,7 @@ include('connection.php');
 						<input type="password" name="confirm_pwd" id="confirm_pwd" required />
 					</li>
 					<li>
-						<input type="submit" value="Submit" /> &nbsp; Already registered? <a href="index.php">Login</a>
+						<input type="submit" value="Submit" /> &nbsp; Already registered? <a href="indexч	ч.php">Login</a>
 					</li>
 				</ul>
 		</form>
